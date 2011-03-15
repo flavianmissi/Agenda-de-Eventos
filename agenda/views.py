@@ -1,8 +1,8 @@
 #-*- encoding: utf-8 -*-
 
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.contrib import messages
 from models import ItemAgenda
 from forms import FormItemAgenda
@@ -23,3 +23,7 @@ def adiciona(request):
     else:
         form = FormItemAgenda()
         return render_to_response('adiciona.html', { 'form':form }, context_instance=RequestContext(request))
+
+def item(request, item_id):
+    item = get_object_or_404(ItemAgenda, pk=item_id)
+    return render_to_response('item.html', {'item':item})
