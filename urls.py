@@ -6,7 +6,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^$', 'agenda.views.lista'),
-    (r'^adiciona/', 'agenda.views.adiciona'),
+    (r'^adiciona/?$', 'agenda.views.adiciona'),
+    (r'^item/(?P<item_id>\d+)/?$', 'agenda.views.item'),
     # Example:
     # (r'^gerenciador/', include('gerenciador.foo.urls')),
 
