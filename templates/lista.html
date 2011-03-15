@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block corpo %}
+
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li{% if message.level %} class="{{ message.level }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<a href="/adiciona/">Adicionar novo item</a>
+
+<ul>
+{% for item in lista_itens %}
+    <li>
+        <a href="/item/{{ item.id }}">
+            {{ item.data|date:'d/m/Y' }} {{ item.titulo }}
+        </a>
+    </li>
+{% empty %}
+    <li>Sem itens na lista</li>
+{% endfor %}
+
+</ul>
+
+{% endblock %}
