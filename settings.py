@@ -59,6 +59,9 @@ MEDIA_URL = '/media/'
 # Examples: "http://foo.com/media/", "/media/".
 ADMIN_MEDIA_PREFIX = '/media/'
 
+# config to static files like css, images and js
+STATIC_DOC_ROOT = os.path.join(ROOTDIR, 'site_media')
+
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'f_=jui@#v2$fhdc5dtwgmefmm3@$bl=!#b^(!v(b@pnl#9j)hq'
 
