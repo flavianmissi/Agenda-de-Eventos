@@ -20,6 +20,8 @@ def adiciona(request):
             item.save()
             messages.add_message(request, messages.INFO, 'Item salvo com sucesso')
             return HttpResponseRedirect("/")
+        else:
+            return render_to_response('adiciona.html', { 'form':form }, context_instance=RequestContext(request))
     else:
         form = FormItemAgenda()
         return render_to_response('adiciona.html', { 'form':form }, context_instance=RequestContext(request))
