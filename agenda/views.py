@@ -29,3 +29,9 @@ def adiciona(request):
 def item(request, item_id):
     item = get_object_or_404(ItemAgenda, pk=item_id)
     return render_to_response('item.html', {'item':item})
+
+
+def remove(request, item_id):
+    item = ItemAgenda.objects.get(id=item_id)
+    item.delete()
+    return HttpResponseRedirect("/")
