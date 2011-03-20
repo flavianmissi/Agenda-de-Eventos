@@ -15,6 +15,7 @@
 <ul>
 {% for item in lista_itens %}
     <li>
+        <a href="/remove/{{ item.id }}"><img src="/site_media/img/trash.png" width="25" height="25" /></a>
         <a href="/item/{{ item.id }}">
             {{ item.data|date:'d/m/Y' }} - {{ item.titulo }}
         </a>
