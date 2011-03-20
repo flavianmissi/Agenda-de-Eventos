@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     (r'^$', 'agenda.views.lista'),
     (r'^adiciona/?$', 'agenda.views.adiciona'),
     (r'^item/(?P<item_id>\d+)/?$', 'agenda.views.item'),
+    (r'^remove/(?P<item_id>\d+)/?$', 'agenda.views.remove'),
     # Example:
     # (r'^gerenciador/', include('gerenciador.foo.urls')),
 
